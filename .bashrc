@@ -102,5 +102,6 @@ unset safe_term match_lhs
 [ -r /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
 
 # User-added variables and/or aliases
+export PATH="$HOME/miniconda3/bin:$PATH" # May need to change this depending on where you installed Python
 export DISPLAY=localhost:0.0
 
