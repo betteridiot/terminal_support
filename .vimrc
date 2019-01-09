@@ -13,6 +13,7 @@ set autoindent
 set nostartofline
 set autoindent
 set nostartofline
+set cc=80
 set ruler
 set laststatus=2
 set confirm
