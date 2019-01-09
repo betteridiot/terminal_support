@@ -32,19 +32,6 @@ case ${TERM} in
                 ;;
 esac
 
-# fortune is a simple program that displays a pseudorandom message
-# from a database of quotations at logon and/or logout.
-# If you wish to use it, please install "fortune-mod" from the
-# official repositories, then uncomment the following line:
-
-# [[ "$PS1" ]] && /usr/bin/fortune
-
-# Set colorful PS1 only on colorful terminals.
-# dircolors --print-database uses its own built-in database
-# instead of using /etc/DIR_COLORS. Try to use the external file
-# first to take advantage of user additions. Use internal bash
-# globbing instead of external grep binary.
-
 # sanitize TERM:
 safe_term=${TERM//[^[:alnum:]]/?}
 match_lhs=""
@@ -72,7 +59,6 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
 
        
         export PS1="\[\033[38;5;202m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;6m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]" 
-        
 
         alias ls="ls -F --group-directories-first --color=auto"
         alias dir="dir --color=auto"
@@ -81,9 +67,6 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
         alias ll="ls -lhF --group-directories-first --color=auto"
         alias jlab="jupyter lab &> /dev/null &"
         alias update="sudo apt-get -y update && sudo apt-get -y upgrade"
-        # Uncomment the "Color" line in /etc/pacman.conf instead of uncommenting the following line...!
-
-        # alias pacman="pacman --color=auto"
         
 fi
 
