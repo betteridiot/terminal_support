@@ -15,6 +15,12 @@ cd terminal_support
 ### If you are using a `conda`-build of Python:
 Change line 93 to your `/etc/profile.d/conda.sh` and uncomment both lines 93-94
 
+* Now move all the files to your `$HOME` directory
+```bash
+cp -i ./* ~/
+```
+ * accept prompts to overwrite if you want to
+
 ---
 # What this does
 * Gives you a more colorful prompt
