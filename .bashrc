@@ -74,13 +74,13 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
         export PS1="\[\033[38;5;202m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;6m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]" 
         
 
-        alias ls="ls --color=auto"
+        alias ls="ls -F --group-directories-first --color=auto"
         alias dir="dir --color=auto"
         alias grep="grep --color=auto"
         alias dmesg='dmesg --color'
-        alias ll="ls -lh --color=auto"
-        alias jlab="jupyter lab &> /dev/null"
-        alias update="sudo apt-get update"
+        alias ll="ls -lhF --group-directories-first --color=auto"
+        alias jlab="jupyter lab &> /dev/null &"
+        alias update="sudo apt-get -y update && sudo apt-get -y upgrade"
         # Uncomment the "Color" line in /etc/pacman.conf instead of uncommenting the following line...!
 
         # alias pacman="pacman --color=auto"
@@ -102,6 +102,10 @@ unset safe_term match_lhs
 [ -r /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
 
 # User-added variables and/or aliases
-export PATH="$HOME/miniconda3/bin:$PATH" # May need to change this depending on where you installed Python
+export HISTSIZE=2000
+tabs 4
+export PYTHONDONTWRITEBYTECODE=1
 export DISPLAY=localhost:0.0
 
+# . /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
+# conda activate
