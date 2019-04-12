@@ -65,7 +65,7 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
         alias grep="grep --color=auto"
         alias dmesg='dmesg --color'
         alias ll="ls -lhF --group-directories-first --color=auto"
-        alias jlab="jupyter lab &> /dev/null &"
+        alias jlab="jupyter lab --notebook-dir=$HOME &> /dev/null &"
         alias update="sudo apt-get -y update && sudo apt-get -y upgrade"
         
 fi
@@ -89,6 +89,8 @@ export HISTSIZE=2000
 tabs 4
 export PYTHONDONTWRITEBYTECODE=1
 export DISPLAY=localhost:0.0
+export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
-# . /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
-# conda activate
+. /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
+conda activate
+bind 'set mark-symlinked-directories on'
