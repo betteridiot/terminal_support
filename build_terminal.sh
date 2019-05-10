@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "This script will rename any overlapping files with a .bak suffix."
 
 read -p "Do you want to continue? " -n 1 -r
