@@ -16,10 +16,13 @@ cd terminal_support
 **Note**: If you are using a `conda`-build of Python:
 Change line 113 to your `/etc/profile.d/conda.sh` and uncomment both lines 113-114
 
-3. Now move all the files to your `$HOME` directory
+3. Now move all the files to your `$HOME` directory using the provided script
 ```bash
 ./build_terminal.sh
 ```
+*Note*: this script will move any pre-existing files that overlap with this
+repo into a folder in your home directory called `backup`. If any of the 
+provided files cause any issues, just recover previous files from this directory.
 
 ---
 # What this does
