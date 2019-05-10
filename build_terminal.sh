@@ -30,4 +30,5 @@ then
 
     # Turn off dotglob
     shopt -u dotglob
+    source ~/.bash_profile
 fi
