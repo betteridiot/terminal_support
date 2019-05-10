@@ -6,7 +6,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # Allow the copy or move of dot files
     shopt -s dotglob
-
+    
+    # Make a backup folder
+    mkdir ~/backup
+    
     # Recursively copy all files
     count=0
     for file in .bashrc .condarc .vim .dir_colors .git-completion.bash .git-prompt.sh .bash_profile .vimrc
@@ -15,9 +18,9 @@ then
         
         # backup any existing files
         if test -f "~/$file"; then
-          mv ~/$file ~/$file.bak $$ printf 'Existing $file file has been renamed $file.bak\n'
+          mv ~/$file ~/backup/$file $$ printf 'Existing $file file has been moved to ~/backup/$file\n'
         elif test -d "~/$file"; then
-          mv ~/$file ~/$file.bak $$ printf 'Existing $file folder has been renamed $file.bak\n'
+          mv ~/$file ~/backup/$file $$ printf 'Existing $file directory has been moved to ~/backup/$file\n'
         fi
         
         # Now copy them recursively
