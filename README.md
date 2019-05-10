@@ -24,7 +24,7 @@ bash build_terminal.sh
 ---
 # What this does
 * Gives you a more colorful prompt
-* Adds git-prompt support that lists the current branch the current repo in on
+* Adds git-prompt support that lists the current branch the current repo is on
 * Puts directories before files when listing them (`ll`)
 * Makes sure your history is large enough
 * Makes your tab = 4 spaces
