@@ -58,9 +58,7 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
                         eval $(dircolors -b /etc/DIR_COLORS)
                 fi
         fi
-
         
-
         # Format the prompt as such: (conda env) basename [branch] $
         export PS1='\[\033[38;5;202m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[\033[38;5;2m\]$(__git_ps1 " (%s)")\[$(tput sgr0)\]\[\033[38;5;63m\] \\$\[$(tput sgr0)\] '
         
@@ -107,8 +105,8 @@ export PYTHONDONTWRITEBYTECODE=1
 # Used for VcXsrv within WSL
 export DISPLAY=localhost:0.0
 
-# Choose your browser for jupyterlab
-export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+# Choose your browser for jupyterlab and uncomment
+#export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
 #. /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
 #conda activate
