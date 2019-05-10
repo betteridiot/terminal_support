@@ -20,6 +20,7 @@ set confirm
 set visualbell
 set t_Co=256
 set t_vb=
+set t_ut=
 set mouse=a
 set cmdheight=2
 set number
