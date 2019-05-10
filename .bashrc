@@ -23,7 +23,9 @@ shopt -s checkwinsize
 # Enable history appending instead of overwriting.
 shopt -s histappend
 
+# Load the git-prompt functions
 source ~/.git-prompt.sh
+source $HOME/.git-completion.bash
 
 case ${TERM} in
         xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
@@ -59,14 +61,22 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
 
         
 
-       
+        # Format the prompt as such: (conda env) basename [branch] $
         export PS1='\[\033[38;5;202m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[\033[38;5;2m\]$(__git_ps1 " (%s)")\[$(tput sgr0)\]\[\033[38;5;63m\] \\$\[$(tput sgr0)\] '
+        
+        # ls grouped, colored, and classified
         alias ls="ls -F --group-directories-first --color=auto"
         alias dir="dir --color=auto"
         alias grep="grep --color=auto"
         alias dmesg='dmesg --color'
+        
+        # List form ls grouped, colored, and classified
         alias ll="ls -lhF --group-directories-first --color=auto"
+        
+        # lauch jupyter lab from home directory
         alias jlab="jupyter lab --notebook-dir=$HOME &> /dev/null &"
+        
+        # shortcut to just update linux distro
         alias update="sudo apt-get -y update && sudo apt-get -y upgrade"
         
 fi
@@ -87,15 +97,18 @@ unset safe_term match_lhs
 
 # User-added variables and/or aliases
 export HISTSIZE=2000
+
+# Because this is the only real tab size
 tabs 4
+
+# Make it so Python won’t try to write .pyc files on the import of source modules
 export PYTHONDONTWRITEBYTECODE=1
+
+# Used for VcXsrv within WSL
 export DISPLAY=localhost:0.0
+
+# Choose your browser for jupyterlab
 export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
 . /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
 conda activate
-source $HOME/.pat_credentials
-
-# added by travis gem
-[ -f /root/.travis/travis.sh ] && source /root/.travis/travis.sh
-source $HOME/.git-completion.bash
