@@ -7,9 +7,6 @@ then
     # Allow the copy or move of dot files
     shopt -s dotglob
     
-    # Make a backup folder
-    mkdir ~/backup
-    
     # Recursively copy all files
     count=0
     for file in .bashrc .condarc .vim .dir_colors .git-completion.bash .git-prompt.sh .bash_profile .vimrc
@@ -18,8 +15,14 @@ then
         
         # backup any existing files
         if test -f "~/$file"; then
+          if [ ! -d "$HOME/backup" ]; then
+              mkdir $HOME/backup
+          fi
           mv ~/$file ~/backup/$file $$ printf 'Existing $file file has been moved to ~/backup/$file\n'
         elif test -d "~/$file"; then
+          if [ ! -d "$HOME/backup" ]; then
+              mkdir $HOME/backup
+          fi
           mv ~/$file ~/backup/$file $$ printf 'Existing $file directory has been moved to ~/backup/$file\n'
         fi
         
