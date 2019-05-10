@@ -23,7 +23,7 @@ Change line 93 to your `/etc/profile.d/conda.sh` and uncomment both lines 93-94
 
 4. Now move all the files to your `$HOME` directory
 ```bash
-cp -i ./* ~/
+bash build_terminal.sh
 ```
  * accept prompts to overwrite if you want to
 
