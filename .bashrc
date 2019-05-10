@@ -110,5 +110,5 @@ export DISPLAY=localhost:0.0
 # Choose your browser for jupyterlab
 export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
-. /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
-conda activate
+#. /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
+#conda activate
