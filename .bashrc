@@ -23,6 +23,8 @@ shopt -s checkwinsize
 # Enable history appending instead of overwriting.
 shopt -s histappend
 
+source ~/.git-prompt.sh
+
 case ${TERM} in
         xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
                 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
@@ -58,8 +60,7 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
         
 
        
-        export PS1="\[\033[38;5;202m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;6m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]" 
-
+        export PS1='\[\033[38;5;202m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[\033[38;5;2m\]$(__git_ps1 " (%s)")\[$(tput sgr0)\]\[\033[38;5;63m\] \\$\[$(tput sgr0)\] '
         alias ls="ls -F --group-directories-first --color=auto"
         alias dir="dir --color=auto"
         alias grep="grep --color=auto"
@@ -93,4 +94,8 @@ export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 
 . /root/miniconda3/etc/profile.d/conda.sh # <-- replace this based on your machine
 conda activate
-bind 'set mark-symlinked-directories on'
+source $HOME/.pat_credentials
+
+# added by travis gem
+[ -f /root/.travis/travis.sh ] && source /root/.travis/travis.sh
+source $HOME/.git-completion.bash
