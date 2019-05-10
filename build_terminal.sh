@@ -8,7 +8,7 @@ then
 
     # Recursively copy all files
     count=0
-    for file in .bashrc .condarc .vim .dir_colors .git-completion.bash .git-prompt.sh .profile .vimrc
+    for file in .bashrc .condarc .vim .dir_colors .git-completion.bash .git-prompt.sh .bash_profile .vimrc
       do
         count=$((count + 1))
         
