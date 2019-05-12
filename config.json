@@ -1,0 +1,27 @@
+{
+  "segments": [
+    "time",
+    "ssh",
+    "virtual_env",
+    "cwd",
+    "git",
+    "git_stash",
+    "jobs",
+    "newline",
+    "hostname",
+    "root"
+  ],
+  "theme": "gruvbox",
+  "time": {
+    "format": "%H:%M"
+  },
+  "cwd":{
+    "mode": "dironly"
+  },
+  "vcs":{
+    "show_symbol": true
+  },
+  "hostname":{
+    "colorize": false
+  }
+}
