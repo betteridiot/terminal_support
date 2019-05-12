@@ -5,6 +5,11 @@ Repo containing files used for customizing the terminal and vim
 # Instructions
 **Note**: if you are mac user, just change `.bashrc` to `.bash_profile`
 
+Also, to allow for `powerline-shell` support, perfom the following:
+```bash
+pip install powerline-shell
+```
+
 1. Clone the repo
 ```bash
 git clone https://github.com/betteridiot/terminal_support.git
@@ -23,6 +28,12 @@ Change line 113 to your `/etc/profile.d/conda.sh` and uncomment both lines 113-1
 *Note*: this script will move any pre-existing files that overlap with this
 repo into a folder in your home directory called `backup`. If any of the 
 provided files cause any issues, just recover previous files from this directory.
+
+*Additionally*: If you would like to utilize `powerline-shell` support (and you installed it
+with `pip`, perform the following:
+```bash
+cp powerline-bashrc/.bashrc ~/
+```
 
 ---
 # What this does
