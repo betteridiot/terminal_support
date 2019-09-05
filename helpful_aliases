@@ -1,0 +1,14 @@
+# ls grouped, colored, and classified
+alias ls="ls -F --group-directories-first --color=auto"
+alias dir="dir --color=auto"
+alias grep="grep --color=auto"
+alias dmesg='dmesg --color'
+
+# List form ls grouped, colored, and classified
+alias ll="ls -lhF --group-directories-first --color=auto"
+
+# lauch jupyter lab from home directory
+alias jlab="jupyter lab --notebook-dir=$HOME &> /dev/null &"
+
+# shortcut to just update linux distro
+alias update="sudo apt-get -y update && sudo apt-get -y upgrade"
