@@ -9,6 +9,7 @@ alias ll="ls -lhF --group-directories-first --color=auto"
 
 # lauch jupyter lab from home directory
 alias jlab="jupyter lab --notebook-dir=$HOME &> /dev/null &"
+alias jnote="jupyter notebook --notebook-dir=$HOME &> /dev/null &"
 
 # shortcut to just update linux distro
 alias update="sudo apt-get -y update && sudo apt-get -y upgrade"
