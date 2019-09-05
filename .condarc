@@ -7,4 +7,3 @@ channels:
 create_default_packages:
   - pip
   - conda
-  - powerline-shell
