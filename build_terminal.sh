@@ -18,13 +18,13 @@ then
         
         # backup any existing files
         if test -f "~/$file"; then
-          mv ~/$file ~/backup/$file $$ printf 'Existing $file file has been moved to ~/backup/$file\n'
+          mv ~/$file ~/backup/$file $$ printf "Existing $file file has been moved to ~/backup/$file\n"
         elif test -d "~/$file"; then
-          mv ~/$file ~/backup/$file $$ printf 'Existing $file directory has been moved to ~/backup/$file\n'
+          mv ~/$file ~/backup/$file $$ printf "Existing $file directory has been moved to ~/backup/$file\n"
         fi
         
         # Now copy them recursively
-        cp -r $file $HOME/ && printf '$file has been copied [$count/8]\n'
+        cp -r $file $HOME/ && printf "$file has been copied [$count/8]\n"
       done
     echo 'All files have been copied into home (~) directory'
 
